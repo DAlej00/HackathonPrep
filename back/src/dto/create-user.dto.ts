@@ -48,6 +48,12 @@ export class CreateUserDto implements User {
   @IsEmail(undefined, { message: 'A valid email must be entered' })
   readonly email: String;
 
+  @IsNotEmpty({ message: 'A username must be provided' })
+  @IsString({ message: 'A valid username must be provided' })
+  @MinLength(3, { message: 'The username must be at least 3 characters' })
+  @MaxLength(30, { message: 'The username can be up to 30 characters' })
+  readonly username: String;
+
   @IsNotEmpty({ message: 'A password must be provided' })
   @MinLength(8, { message: 'Password must be at least 8 characters' })
   password: String;

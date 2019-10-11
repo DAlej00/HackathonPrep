@@ -7,6 +7,7 @@ export interface User extends Document {
   readonly secondSurname: String;
   readonly age: Number;
   readonly email: String;
+  readonly username: String;
   password: String;
   readonly cui: number;
 }

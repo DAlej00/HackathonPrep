@@ -1,4 +1,4 @@
-import { Injectable, HttpException, Logger } from '@nestjs/common';
+import { Injectable, HttpException } from '@nestjs/common';
 
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -13,7 +13,21 @@ export class UsersService {
 
   async create(userDto: CreateUserDto): Promise<User> {
     if (await this.findOne('cui', userDto.cui, false))
-      throw new HttpException({ message: 'User cui is alredy taken' }, 404);
+      throw new HttpException(
+        { message: `User's cui is alredy registered` },
+        404,
+      );
+    else if (await this.findOne('email', userDto.email, false))
+      throw new HttpException(
+        { message: `User's email is alredy registered` },
+        404,
+      );
+    else if (await this.findOne('username', userDto.username, false))
+      throw new HttpException(
+        { message: 'Username is alredy registered' },
+        404,
+      );
+
     const dbUser = new this.userModel(userDto);
     dbUser._id = v4();
     dbUser.password = await bcrypt.hash(userDto.password, 10);
