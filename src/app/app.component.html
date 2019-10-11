@@ -1,35 +1,16 @@
 <nz-layout class="app-layout">
-  <nz-sider
-    class="menu-sidebar"
-    nzCollapsible
-    [(nzCollapsed)]="isCollapsed"
-    nzWidth="200px"
-  >
-    <div class="sidebar-logo">
-      <img src="https://www.kinal.org.gt/images/logollama.png" />
-      <p>KINAL GT FORCE</p>
-    </div>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="200px">
     <ul
       nz-menu
       nzTheme="dark"
       nzMode="inline"
       [nzInlineCollapsed]="isCollapsed"
     >
-      <li nz-menu-item>
-        <i nz-icon nzType="bulb" nzTheme="outline"></i>
-        <span>Iluminación</span>
-      </li>
-      <li nz-menu-item>
-        <i nz-icon nzType="border-inner" nzTheme="outline"></i>
-        <span>Cortinas</span>
-      </li>
-      <li nz-menu-item>
-        <i nz-icon nzType="fire" nzTheme="outline"></i>
-        <span>Temperatura</span>
-      </li>
-      <li nz-menu-item>
-        <i nz-icon nzType="calculator" nzTheme="outline"></i>
-        <span>Consumo de energía</span>
+      <li nz-menu-item nzMatchRouter *ngFor="let r of routes">
+        <a [routerLink]="r.link">
+          <i nz-icon [nzType]="r.icon" [nzTheme]="r.theme"></i>
+          <span>{{ r.text }}</span>
+        </a>
       </li>
     </ul>
   </nz-sider>
@@ -37,7 +18,6 @@
     <nz-header>
       <nz-breadcrumb>
         <nz-breadcrumb-item>User</nz-breadcrumb-item>
-        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
       </nz-breadcrumb>
     </nz-header>
     <nz-content>

@@ -1,50 +1,5 @@
-.menu-sidebar {
-  position: relative;
-  z-index: 10;
-  min-height: 100vh;
-  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
-}
-
-.sidebar-logo {
-  position: relative;
-  height: 64px;
-  padding-left: 24px;
-  overflow: hidden;
-  line-height: 64px;
-  background: #001529;
-  transition: all 0.3s;
-  color: #fff;
-}
-
-.sidebar-logo img {
-  vertical-align: middle;
-  display: inline-block;
-  height: 32px;
-  width: 32px;
-}
-
-.sidebar-logo p {
-  margin: 0 0 0 0;
-  display: inline-block;
-  color: #fff;
-  vertical-align: middle;
-}
-
 .app-layout {
   height: 100vh;
-}
-
-.app-header {
-  position: relative;
-  height: 64px;
-  padding: 0;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-}
-
-.logo {
-  height: 32px;
-  margin: 16px;
 }
 
 .inner-content {
@@ -64,7 +19,7 @@ nz-content {
 }
 
 nz-breadcrumb {
-  margin: 16px 0;
+  color: #fff;
 }
 
 nz-footer {

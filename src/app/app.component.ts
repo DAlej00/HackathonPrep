@@ -9,4 +9,37 @@ import { SidenavComponent } from './modules/shared/sidenav/sidenav.component';
 })
 export class AppComponent {
   isCollapsed = false;
+
+  routes = [
+    {
+      icon: 'home',
+      theme: 'outline',
+      text: 'Inicio',
+      link: 'home'
+    },
+    {
+      icon: 'bulb',
+      theme: 'outline',
+      text: 'Iluminación',
+      link: 'ilumination'
+    },
+    {
+      icon: 'border-inner',
+      theme: 'outline',
+      text: 'Cortinas',
+      link: 'curtains'
+    },
+    {
+      icon: 'fire',
+      theme: 'outline',
+      text: 'Temperatura',
+      link: 'temperature'
+    },
+    {
+      icon: 'calculator',
+      theme: 'outline',
+      text: 'Consumo de energía',
+      link: 'energy'
+    }
+  ];
 }
