@@ -5,6 +5,7 @@ import {
   Get,
   UseGuards,
   Request,
+  Logger,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from '../dto/create-user.dto';
@@ -16,7 +17,9 @@ export class UsersController {
 
   @Post()
   async create(@Body() userDto: CreateUserDto) {
-    return this.userService.create(userDto);
+    let user = await this.userService.create(userDto);
+    user.password = null;
+    return user;
   }
 
   @UseGuards(AuthGuard('jwt'))
