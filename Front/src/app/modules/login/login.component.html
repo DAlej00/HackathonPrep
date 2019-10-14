@@ -1,0 +1,57 @@
+<form
+  nz-col
+  [nzSpan]="18"
+  [nzOffset]="6"
+  nz-form
+  [formGroup]="loginForm"
+  (ngSubmit)="login()"
+>
+  <nz-form-item>
+    <nz-form-label nzRequired>Nombre de usuario</nz-form-label>
+    <nz-form-control nzHasFeedback [nzErrorTip]="usernameErrorTpl">
+      <input
+        nz-input
+        formControlName="username"
+        placeholder="Usuario001"
+        type="text"
+      />
+      <ng-template #usernameErrorTpl let-control>
+        <ng-container *ngIf="control.hasError('minlength')">
+          El usuario debe tener el menos 3 caracteres
+        </ng-container>
+        <ng-container *ngIf="control.hasError('required')">
+          El nombre de usuario de obligatorio
+        </ng-container>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzRequired>Nombre de usuario</nz-form-label>
+    <nz-form-control nzHasFeedback [nzErrorTip]="passwordErrorTpl">
+      <nz-input-group nzPrefixIcon="lock">
+        <input
+          type="password"
+          nz-input
+          formControlName="password"
+          placeholder="Password"
+        />
+      </nz-input-group>
+      <ng-template #passwordErrorTpl let-control>
+        <ng-container *ngIf="control.hasError('minlength')">
+          La contraseña es muy corta
+        </ng-container>
+        <ng-container *ngIf="control.hasError('required')">
+          La contraseña es requerida
+        </ng-container>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button class="login-form-button" [nzType]="'primary'">
+        Iniciar sesion
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

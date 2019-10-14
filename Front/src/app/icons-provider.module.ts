@@ -7,7 +7,9 @@ import {
   FireOutline,
   CalculatorOutline,
   HomeOutline,
-  CodeOutline
+  CodeOutline,
+  UserOutline,
+  LockOutline
 } from '@ant-design/icons-angular/icons';
 
 const icons = [
@@ -16,7 +18,9 @@ const icons = [
   FireOutline,
   CalculatorOutline,
   HomeOutline,
-  CodeOutline
+  CodeOutline,
+  UserOutline,
+  LockOutline
 ];
 
 @NgModule({

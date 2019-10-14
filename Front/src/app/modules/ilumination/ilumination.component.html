@@ -1,1 +1,16 @@
-<p>ilumination works!</p>
+<input
+  nz-input
+  placeholder="Ip remota con web socket en el puerto 81"
+  [(ngModel)]="ip"
+  #ip2="ngModel"
+/>
+<br />
+<br />
+<button nz-button nzType="default" (click)="connect()">
+  Conectar</button
+><br /><br />
+
+<button nz-button nzType="primary" (click)="change(1)">Encender</button>
+<br /><br />
+
+<button nz-button nzType="danger" (click)="change(0)">Apagar</button>

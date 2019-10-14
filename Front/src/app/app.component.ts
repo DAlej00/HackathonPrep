@@ -8,7 +8,7 @@ import { SidenavComponent } from './modules/shared/sidenav/sidenav.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isCollapsed = false;
+  isCollapsed = true;
 
   routes = [
     {
@@ -40,6 +40,12 @@ export class AppComponent {
       theme: 'outline',
       text: 'Consumo de energía',
       link: 'energy'
+    },
+    {
+      icon: 'user',
+      theme: 'outline',
+      text: 'Iniciar sesión',
+      link: 'login'
     }
   ];
 }

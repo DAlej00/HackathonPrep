@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ilumination.component.css']
 })
 export class IluminationComponent implements OnInit {
+  ip: String;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  connect() {
+    if (this.ip.length < 14) {
+      console.log('Ip no valida');
+    }
   }
 
+  change(state: number) {
+    let data = state == 1 ? 'a' : 'b';
+    console.log(data);
+  }
 }
