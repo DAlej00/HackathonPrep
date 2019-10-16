@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IluminationComponent implements OnInit {
   ip: String;
+
   constructor() {}
 
   ngOnInit() {}

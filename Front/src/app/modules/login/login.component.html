@@ -49,7 +49,12 @@
   </nz-form-item>
   <nz-form-item>
     <nz-form-control>
-      <button nz-button class="login-form-button" [nzType]="'primary'">
+      <button
+        nz-button
+        class="login-form-button"
+        [disabled]="loginForm.invalid"
+        [nzType]="'primary'"
+      >
         Iniciar sesion
       </button>
     </nz-form-control>
