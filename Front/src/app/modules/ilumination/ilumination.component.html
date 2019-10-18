@@ -1,16 +1,45 @@
-<input
-  nz-input
-  placeholder="Ip remota con web socket en el puerto 81"
-  [(ngModel)]="ip"
-  #ip2="ngModel"
-/>
-<br />
-<br />
-<button nz-button nzType="default" (click)="connect()">
-  Conectar</button
-><br /><br />
+<h1 nz-title style="text-align: center;">Luces de la casa</h1>
 
-<button nz-button nzType="primary" (click)="change(1)">Encender</button>
-<br /><br />
+<h2 nz-title>Luz de la sala</h2>
 
-<button nz-button nzType="danger" (click)="change(0)">Apagar</button>
+<div nz-row>
+  <div nz-col nzSm="24" nzMd="12">
+    <h4 nz-title>Estado: {{ livingRoom == true ? 'Encendida' : 'Apagada' }}</h4>
+  </div>
+  <div nz-col nzSm="24" nzMd="12">
+    <nz-switch
+      (ngModelChange)="onChange('livingRoom')"
+      [(ngModel)]="livingRoom"
+    ></nz-switch>
+  </div>
+</div>
+
+<h2 nz-title>Luz de la habitación</h2>
+
+<div nz-row>
+  <div nz-col nzSm="24" nzMd="12">
+    <h4 nz-title>Estado: {{ room == true ? 'Encendida' : 'Apagada' }}</h4>
+  </div>
+  <div nz-col nzSm="24" nzMd="12">
+    <nz-switch
+      (ngModelChange)="onChange('room')"
+      [(ngModel)]="room"
+    ></nz-switch>
+  </div>
+</div>
+
+<h2 nz-title>Luz de la cocina</h2>
+
+<div nz-row>
+  <div nz-col nzSm="24" nzMd="12">
+    <h4 nz-title>
+      Estado: {{ dinningRoom == true ? 'Encendida' : 'Apagada' }}
+    </h4>
+  </div>
+  <div nz-col nzSm="24" nzMd="12">
+    <nz-switch
+      (ngModelChange)="onChange('dinningRoom')"
+      [(ngModel)]="dinningRoom"
+    ></nz-switch>
+  </div>
+</div>

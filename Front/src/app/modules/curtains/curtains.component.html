@@ -1,1 +1,42 @@
-<p>curtains works!</p>
+<h1 nz-title style="text-align: center;">Cortinas de la casa</h1>
+
+<h4 nz-title style="text-align: center;">Controles de la cortina</h4>
+
+<div nz-row>
+  <div nz-col nzSm="24" nzMd="8">
+    <h4 nz-title>Mover a la izquierda</h4>
+    <br />
+    <button
+      [disabled]="moving"
+      (click)="move('left')"
+      nz-button
+      nzType="primary"
+    >
+      <i nz-icon nzType="left-circle"></i>
+    </button>
+  </div>
+  <div nz-col nzSm="24" nzMd="8">
+    <h4 nz-title>Detener</h4>
+    <br />
+    <button
+      [disabled]="!moving"
+      (click)="move('stop')"
+      nz-button
+      nzType="primary"
+    >
+      <i nz-icon nzType="pause-circle"></i>
+    </button>
+  </div>
+  <div nz-col nzSm="24" nzMd="8">
+    <h4 nz-title>Mover a la derecha</h4>
+    <br />
+    <button
+      [disabled]="moving"
+      (click)="move('right')"
+      nz-button
+      nzType="primary"
+    >
+      <i nz-icon nzType="right-circle"></i>
+    </button>
+  </div>
+</div>

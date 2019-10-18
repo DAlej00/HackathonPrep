@@ -4,8 +4,7 @@
 
 .inner-content {
   padding: 24px;
-  background: #fff;
-  min-height: 360px;
+  height: 90vh;
 }
 
 nz-header {
@@ -24,4 +23,6 @@ nz-breadcrumb {
 
 nz-footer {
   text-align: center;
+  height: 10vh;
+  margin-bottom: 0;
 }

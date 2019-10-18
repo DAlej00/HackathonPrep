@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [UserService]
+  providers: [AuthService]
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private _userService: UserService,
+    private _authService: AuthService,
     private router: Router
   ) {
     this.initForm();
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.loginForm.invalid) return;
-    this._userService.login(this.loginForm.value).subscribe(
+    this._authService.login(this.loginForm.value).subscribe(
       res => {
         if (res.access_token) {
           localStorage.setItem('token', res.access_token);

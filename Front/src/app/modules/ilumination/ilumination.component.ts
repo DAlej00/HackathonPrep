@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutomatizationService } from '../../services/automatization.service';
 
 @Component({
   selector: 'app-ilumination',
@@ -6,20 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ilumination.component.css']
 })
 export class IluminationComponent implements OnInit {
-  ip: String;
+  livingRoom: boolean = false;
+  room: boolean = false;
+  dinningRoom: boolean = false;
 
-  constructor() {}
+  constructor(private _automatizationService: AutomatizationService) {}
 
   ngOnInit() {}
 
-  connect() {
-    if (this.ip.length < 14) {
-      console.log('Ip no valida');
-    }
-  }
-
-  change(state: number) {
-    let data = state == 1 ? 'a' : 'b';
-    console.log(data);
+  onChange(place: string) {
+    console.log(place);
+    // this._automatizationService.sendAction('ligths', place).subscribe(
+    //   res => {
+    //     console.log(res);
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
   }
 }

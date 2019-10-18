@@ -9,7 +9,12 @@ import {
   HomeOutline,
   CodeOutline,
   UserOutline,
-  LockOutline
+  LockOutline,
+  LoginOutline,
+  LogoutOutline,
+  RightCircleOutline,
+  LeftCircleOutline,
+  PauseCircleOutline
 } from '@ant-design/icons-angular/icons';
 
 const icons = [
@@ -19,8 +24,12 @@ const icons = [
   CalculatorOutline,
   HomeOutline,
   CodeOutline,
-  UserOutline,
-  LockOutline
+  LockOutline,
+  LoginOutline,
+  LogoutOutline,
+  RightCircleOutline,
+  LeftCircleOutline,
+  PauseCircleOutline
 ];
 
 @NgModule({

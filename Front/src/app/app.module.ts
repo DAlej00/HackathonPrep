@@ -10,13 +10,12 @@ import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
 import { HeaderModule } from './modules/shared/header/header.module';
 import { SidenavModule } from './modules/shared/sidenav/sidenav.module';
+import { SharedModule } from './modules/shared/shared.module';
 
 registerLocaleData(es);
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,9 +23,10 @@ registerLocaleData(es);
     NgZorroAntdModule,
     BrowserAnimationsModule,
     HeaderModule,
-    SidenavModule
+    SidenavModule,
+    SharedModule
   ],
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

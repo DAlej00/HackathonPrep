@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./energy.component.css']
 })
 export class EnergyComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
+  date = new Date();
+  mode = 'month';
 
-  ngOnInit() {
+  panelChange(change: { date: Date; mode: string }): void {
+    // console.log(change.date, change.mode);
   }
-
 }
