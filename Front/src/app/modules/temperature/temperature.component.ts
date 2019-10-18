@@ -32,7 +32,12 @@ export class TemperatureComponent implements OnInit {
   public barChartLabels = [];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartData = [24, 25, 21];
+  public barChartData = [
+    {
+      data: [24, 23, 24],
+      label: 'Temperatura'
+    }
+  ];
 
   public date = new Date();
   public three;

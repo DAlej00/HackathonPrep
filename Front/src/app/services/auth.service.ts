@@ -38,6 +38,6 @@ export class AuthService {
 
   authenticated(): boolean {
     let t = localStorage.getItem('token');
-    return t == null || t == undefined;
+    return t != null || t != undefined;
   }
 }

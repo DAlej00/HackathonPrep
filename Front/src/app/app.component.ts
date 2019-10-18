@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { HeaderComponent } from './modules/shared/header/header.component';
 import { SidenavComponent } from './modules/shared/sidenav/sidenav.component';
 import { AuthService } from './services/auth.service';
@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
   providers: [AuthService]
 })
-export class AppComponent {
+export class AppComponent implements DoCheck {
+  ngDoCheck(): void {
+    this.logged = this.auth.authenticated();
+  }
   constructor(public auth: AuthService, private router: Router) {}
   isCollapsed = true;
   logged = this.auth.authenticated();

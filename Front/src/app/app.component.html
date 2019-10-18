@@ -18,11 +18,9 @@
           <span>Iniciar sesion</span>
         </a>
       </li>
-      <li *ngIf="logged" nz-menu-item>
-        <a (click)="logout()">
-          <i nz-icon nzType="logout" nzTheme="outline"></i>
-          <span>Cerrar session</span>
-        </a>
+      <li (click)="logout()" *ngIf="logged" nz-menu-item>
+        <i nz-icon nzType="logout" nzTheme="outline"></i>
+        <span>Cerrar session</span>
       </li>
     </ul>
   </nz-sider>
