@@ -26,9 +26,15 @@
   </nz-sider>
   <nz-layout>
     <nz-header>
-      <nz-breadcrumb>
-        <nz-breadcrumb-item>User</nz-breadcrumb-item>
-      </nz-breadcrumb>
+      <input
+        nz-input
+        placeholder="Ip del ESP8266"
+        style="width: 25%; margin-left: 5%;"
+        [(ngModel)]="ip"
+      />
+      <button style="margin: 3%" nz-button (click)="setIp()" nzType="default">
+        Actualizar
+      </button>
     </nz-header>
     <nz-content>
       <div class="inner-content">

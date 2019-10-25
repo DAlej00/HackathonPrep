@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { Label } from 'ng2-charts';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ChartOptions } from 'chart.js';
+import { AutomatizationService } from '../../services/automatization.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-temperature',
   templateUrl: './temperature.component.html',
-  styleUrls: ['./temperature.component.css']
+  styleUrls: ['./temperature.component.css'],
+  providers: [AutomatizationService]
 })
 export class TemperatureComponent implements OnInit {
   public barChartOptions: ChartOptions = {
@@ -44,7 +46,7 @@ export class TemperatureComponent implements OnInit {
   public two;
   public current;
 
-  constructor() {
+  constructor(private _automatizationService: AutomatizationService) {
     this.three = this.date.getTime() - 1000 * 60 * 60 * 3;
     this.two = this.date.getTime() - 1000 * 60 * 60 * 2;
     this.current = this.date.getTime() - 1000 * 60 * 60 * 1;

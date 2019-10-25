@@ -8,22 +8,8 @@
   </div>
   <div nz-col nzSm="24" nzMd="12">
     <nz-switch
-      (ngModelChange)="onChange('livingRoom')"
+      (ngModelChange)="onChange('livingRoom', livingRoom)"
       [(ngModel)]="livingRoom"
-    ></nz-switch>
-  </div>
-</div>
-
-<h2 nz-title>Luz de la habitación</h2>
-
-<div nz-row>
-  <div nz-col nzSm="24" nzMd="12">
-    <h4 nz-title>Estado: {{ room == true ? 'Encendida' : 'Apagada' }}</h4>
-  </div>
-  <div nz-col nzSm="24" nzMd="12">
-    <nz-switch
-      (ngModelChange)="onChange('room')"
-      [(ngModel)]="room"
     ></nz-switch>
   </div>
 </div>
@@ -38,8 +24,22 @@
   </div>
   <div nz-col nzSm="24" nzMd="12">
     <nz-switch
-      (ngModelChange)="onChange('dinningRoom')"
+      (ngModelChange)="onChange('dinningRoom', dinningRoom)"
       [(ngModel)]="dinningRoom"
+    ></nz-switch>
+  </div>
+</div>
+
+<h2 nz-title>Luz de la habitación</h2>
+
+<div nz-row>
+  <div nz-col nzSm="24" nzMd="12">
+    <h4 nz-title>Estado: {{ room == true ? 'Encendida' : 'Apagada' }}</h4>
+  </div>
+  <div nz-col nzSm="24" nzMd="12">
+    <nz-switch
+      (ngModelChange)="onChange('room', room)"
+      [(ngModel)]="room"
     ></nz-switch>
   </div>
 </div>

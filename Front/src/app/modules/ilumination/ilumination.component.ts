@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AutomatizationService } from '../../services/automatization.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-ilumination',
@@ -15,15 +16,29 @@ export class IluminationComponent implements OnInit {
 
   ngOnInit() {}
 
-  onChange(place: string) {
-    console.log(place);
-    // this._automatizationService.sendAction('ligths', place).subscribe(
-    //   res => {
-    //     console.log(res);
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
+  onChange(place: string, value: boolean) {
+    var action;
+    if (place == 'livingRoom') {
+      action = !value ? '1' : '2';
+    }
+
+    if (place == 'dinningRoom') {
+      action = !value ? '3' : '4';
+    }
+
+    if (place == 'room') {
+      action = !value ? '5' : '6';
+    }
+
+    this._automatizationService
+      .sendAction(environment.remote, action)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 }

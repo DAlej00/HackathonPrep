@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AutomatizationService } from '../../services/automatization.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-curtains',
@@ -9,20 +10,19 @@ import { AutomatizationService } from '../../services/automatization.service';
 })
 export class CurtainsComponent implements OnInit {
   constructor(private _automatizationService: AutomatizationService) {}
-  moving: boolean = false;
   ngOnInit() {}
 
   move(direction: string) {
     console.log(direction);
-    if (direction == 'stop') this.moving = false;
-    else this.moving = true;
-    // this._automatizationService.sendAction('curtains', direction).subscribe(
-    //   res => {
-    //     console.log(res);
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
+    this._automatizationService
+      .sendAction(environment.remote, direction)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 }

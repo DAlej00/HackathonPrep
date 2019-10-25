@@ -7,19 +7,18 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   {
     path: 'login',
-    canActivate: [AuthenticatedGuard],
     loadChildren: () =>
       import('./modules/login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'home',
-    canActivate: [AuthGuard],
+    canActivate: [AuthenticatedGuard],
     loadChildren: () =>
       import('./modules/home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'ilumination',
-    canActivate: [AuthGuard],
+    canActivate: [AuthenticatedGuard],
     loadChildren: () =>
       import('./modules/ilumination/ilumination.module').then(
         m => m.IluminationModule
@@ -27,13 +26,13 @@ const routes: Routes = [
   },
   {
     path: 'curtains',
-    canActivate: [AuthGuard],
+    canActivate: [AuthenticatedGuard],
     loadChildren: () =>
       import('./modules/curtains/curtains.module').then(m => m.CurtainsModule)
   },
   {
     path: 'temperature',
-    canActivate: [AuthGuard],
+    canActivate: [AuthenticatedGuard],
     loadChildren: () =>
       import('./modules/temperature/temperature.module').then(
         m => m.TemperatureModule
@@ -41,7 +40,7 @@ const routes: Routes = [
   },
   {
     path: 'energy',
-    canActivate: [AuthGuard],
+    canActivate: [AuthenticatedGuard],
     loadChildren: () =>
       import('./modules/energy/energy.module').then(m => m.EnergyModule)
   }
